@@ -7,7 +7,14 @@ class utility
     {
         $tableheader = false;
         $html = "";
-        $html .= "<table class='table' border='2px'>";
+        $html .= "<div class='container' style='padding-top: 50px;'>";
+        $html .= "<div class='row'>";
+        $html .= "<div class='col-md-8'>";
+        $html .= "<h1 class='my-4'>Toekomstige evenementen
+      <small>alle nodige informatie</small>
+    </h1>";
+        $html .= "<div class='card mb-4'>";
+
 
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -15,33 +22,56 @@ class utility
             if ($tableheader == false) {
 
 
-                $html .= "<tr>";
+                $html .= "<div class='col'>";
                 foreach ($row as $key => $value) {
 
-
-                    $html .= "<th>$key</th>";
+                    if($key == 'activiteit_id') {
+                        $id = $value;
+                    }
                 }
+                foreach ($row as $key => $value) {
 
-                $html .= "</tr>";
-                $tableheader = true;
+                    if($key == 'activiteit_naam') {
+                        $html .= $value;
+                    }
+                }
+                $html .= '<br>';
+                foreach ($row as $key => $value) {
+
+                    if($key == 'activiteit_beschrijving') {
+                        $html .= $value;
+                    }
+                }
+                $html .= '<br>';
+                $html .= '<a href="index.php?op=read&id="><button type="button" class="btn btn-primary">Lees meer</button></a> 
+';
+
+                $html .= "</div>";
+                $tableheader = false;
             }
 
-            $html .= "<tr>";
+            $html .= "";
 
-            foreach ($row as $key => $value) {
+            /*foreach ($row as $key => $value) {
                 if($key == "product_price"){
                     $html .= "<td> €" . str_replace('.', ',', $value) . "</td>";
                 } else {
-                    $html .= "<td>$value</td>";
+                    $html .= $value;
+
                 }
 
-            }
-
+            }*/
+            $html .= "</div>";
 
 
         }
 
-        $html .= "</table>";
+        $html .= "</div>";
+
+        $html .= "</div>";
+
+        $html .= "</div>";
+
         /*$html .= "<ul><li><a href=''>1</a></li><li><a href=''>2</a></li><li><a href=''>3</a></li></ul>";
         for ($i=1; $i <= $pages; $i++){
             $html.= "<li><div onClick=\'localhost/index.php?op=readpage&p='.$i\">".$i."</div></li>";
