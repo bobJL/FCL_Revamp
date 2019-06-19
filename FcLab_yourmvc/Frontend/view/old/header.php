@@ -23,16 +23,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
     <div class="container">
         <div class="same">
-            <h3 class=""> FCL evenement planner</h3>
+            <h3 class="" style="color:#007bff;"> FCL evenement planner</h3>
             <ul class="nav nav-tabs nav-tabs-dark">
                 <li class="nav-item-dark">
-                    <a class="nav-link active alert-link" href="home">evenement pagina</a>
+                    <a class="nav-link active alert-link" href="../">evenement pagina</a>
                 </li>
                 <li class="nav-item-dark">
-                    <a class="nav-link alert-link" href="login">login</a>
+                    <a class="nav-link alert-link" href="view/login.php">login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link alert-link" href="beheer">beheer pagina</a>
+                    <a class="nav-link alert-link" href="../../Backend">beheer pagina</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link alert-link" href="register">registreer als vrijwilliger</a>
