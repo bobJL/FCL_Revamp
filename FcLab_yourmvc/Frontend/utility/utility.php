@@ -25,7 +25,7 @@ class utility
                 $html .= "<div class='col'>";
                 foreach ($row as $key => $value) {
 
-                    if($key == 'activiteit_id') {
+                    if($key == 'id') {
                         $id = $value;
                     }
                 }
@@ -43,7 +43,7 @@ class utility
                     }
                 }
                 $html .= '<br>';
-                $html .= '<a href="index.php?op=read&id="><button type="button" class="btn btn-primary">Lees meer</button></a> 
+                $html .= '<a href="index.php?op=read&id=' . $id . '"><button type="button" class="btn btn-primary">Lees meer</button></a> 
 ';
 
                 $html .= "</div>";
