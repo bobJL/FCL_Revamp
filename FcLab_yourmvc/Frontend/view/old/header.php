@@ -15,28 +15,14 @@
     <noscript>Please turn on javascript in your browser settings</noscript>
 </head>
 <body>
-<style>
-    .fixed-top{
-        position: relative;
-    }
-</style>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-    <div class="container">
-        <div class="same">
-            <h3 class=""> FCL evenement planner</h3>
-            <ul class="nav nav-tabs nav-tabs-dark">
-                <li class="nav-item-dark">
-                    <a class="nav-link active alert-link" href="home">evenement pagina</a>
-                </li>
-                <li class="nav-item-dark">
-                    <a class="nav-link alert-link" href="login">login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link alert-link" href="beheer">beheer pagina</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link alert-link" href="register">registreer als vrijwilliger</a>
-                </li>
-            </ul>
-            <span class="line"></span>
+<h1>Evenementen</h1>
+<div class="searchcreate">
+<form action="?op=search" method="post">
+    <input type="text" name="input">
+    <button class="btn"><i class="fas fa-search"></i></button>
+</form>
+
+<nav>
+    <a href="index.php?op=create"><button>Maak nieuw evenement aan</button></a><br>
 </nav>
+</div>
