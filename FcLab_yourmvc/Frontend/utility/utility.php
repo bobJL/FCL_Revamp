@@ -37,7 +37,8 @@ class utility
 
             }
 
-            $html .= "</tr>";
+
+
         }
 
         $html .= "</table>";
