@@ -37,10 +37,6 @@ class utility
 
             }
 
-
-            $html .= "<td><button name='read'><i class=\"fas fa-book-open\"> Read</i></button></td>";
-            $html .= "<td><button  name='update'><i class=\"fas fa-pencil-alt\"> Update</i></button></td>";
-            $html .= "<td><button name='delete'><i class=\"fas fa-times\"> Delete</i></button></td>";
             $html .= "</tr>";
         }
 
