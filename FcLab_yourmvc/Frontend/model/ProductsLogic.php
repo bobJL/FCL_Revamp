@@ -6,7 +6,7 @@ class ProductsLogic
 {
     public function __construct()
     {
-        $this->DataHandler = new DataHandler("localhost", "mysql", "fcl_database", "root", "");
+        $this->DataHandler = new DataHandler("localhost", "mysql", "eventplanner", "ilias", "12345");
     }
 
     public function __destruct()
@@ -49,13 +49,10 @@ class ProductsLogic
 
     public function readContact($id)
     {
-
         try {
-
             $sql = "SELECT * FROM activiteiten WHERE id =" . $id;
 
             $result = $this->DataHandler->readsData($sql);
-
             return $result;
         }catch (Exception $e) {
             throw $e;

@@ -20,6 +20,9 @@ class ProductsController
         try {
             $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : NULL;
             switch ($op) {
+                case 'detail':
+                    $this->collectReadContact($_REQUEST['id']);
+                    break;
                 case 'create':
                     if ($_POST['activiteit_naam'] == null) {
                         include 'view/old/create.php';
@@ -74,11 +77,8 @@ class ProductsController
 
     public function collectReadContact($id)
     {
-
         $products = $this->ProductsLogic->readContact($id);
-        include 'view/ViewProducts.php';
-
-
+        include 'view/DetailPage.php';
     }
 
     public function collectReadContacts()
