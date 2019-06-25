@@ -5,6 +5,7 @@ class DataHandler{
     private $dbname;
     private $username;
     private $password;
+    
 
     public function __construct($host, $dbdriver, $dbname, $username, $password)
     {
@@ -13,6 +14,7 @@ class DataHandler{
         $this->dbname = $dbname;
         $this->username = $username;
         $this->password = $password;
+        
 
         try {
             $this->dbh = new PDO("$this->dbdriver:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
@@ -64,4 +66,6 @@ class DataHandler{
         return $pages;
     }*/
 }
+
+
 ?>

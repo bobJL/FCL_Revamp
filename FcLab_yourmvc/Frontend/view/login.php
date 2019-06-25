@@ -1,42 +1,48 @@
-<?php include 'old/header.php';
-include '../controller/LoginController.php' ?>
+<?php
+#
+   include_once 'old/header.php';
+   require '../controller/login.controller.php';
+   session_start();
+   if ( isset($_SESSION['user']['id']) )
+   {
+      if ( $_SESSION['user']['id'] )
+      {
+         header('location: home.php');
+      }
+   }
+#
+?>
 
-
-<!-- Page Content -->
-<div class="container" style="padding-top: 150px;">
-
-    <div class="row">
-
-
-        <div class="wrapper">
-            <h2>Login</h2>
-            <p>Please fill in your credentials to login.</p>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                    <span class="help-block"><?php echo $username_err; ?></span>
-                </div>
-                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control">
-                    <span class="help-block"><?php echo $password_err; ?></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Login">
-                </div>
-        </div>
-    </div>
-</div>
-<!-- /.container -->
-</footer>
-<?php include 'old/footer.php'; ?>
-<!-- Bootstrap core JavaScript -->
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
-
-
+   <div id="register">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+               <form action="<?php echo validate( $_SERVER["PHP_SELF"] ); ?>" method="POST">
+                  <div class="panel panel-default">
+                     <div class="panel-heading">
+                        <h2 class="text-center">Login your Account</h2>
+                     </div>
+                     <div class="panel-body">
+                        <?php echo $general_err; ?>
+                        <div class="form-group">
+                           <label for="email">E-mail</label>
+                           <input type="text" name="email" class="form-control <?php echo ( !empty($general_err) ) ? 'error' : ''; ?>" value="<?php echo $email; ?>">
+                        </div>
+                        <div class="form-group">
+                           <label for="pwd">Password</label>
+                           <input type="password" name="pwd" class="form-control <?php echo ( !empty($general_err) ) ? 'error' : ''; ?>" value="<?php echo $pwd; ?>">
+                        </div>
+                     </div>
+                     <div class="panel-footer">
+                        <button type="submit" name="login" class="btn btn-primary pull-right">
+                           <span class="glyphicon glyphicon-user"></span> Login
+                        </button>
+                        <div class="clearfix"></div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+<?php include_once 'old/footer.php'; ?>

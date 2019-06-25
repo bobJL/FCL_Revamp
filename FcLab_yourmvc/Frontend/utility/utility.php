@@ -7,68 +7,41 @@ class utility
     {
         $tableheader = false;
         $html = "";
-        $html .= "<div class='container' style='padding-top: 50px;'>";
-        $html .= "<div class='row'>";
-        $html .= "<div class='col-md-8'>";
-        $html .= "<h1 class='my-4'>Toekomstige evenementen
-      <small>alle nodige informatie</small>
-    </h1>";
-        $html .= "<div class='card mb-4'>";
+        $html .= "<table class='table' border='2px'>";
 
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
             if ($tableheader == false) {
-                $html .= "<div class='col'>";
+
+
+                $html .= "<tr>";
                 foreach ($row as $key => $value) {
 
-                    if ($key == 'id') {
-                        $id = $value;
-                    }
-                }
-                foreach ($row as $key => $value) {
 
-                    if ($key == 'activiteit_naam') {
-                        $html .= $value;
-                    }
+                    $html .= "<th>$key</th>";
                 }
-                $html .= '<br>';
-                foreach ($row as $key => $value) {
 
-                    if ($key == 'activiteit_beschrijving') {
-                        $html .= $value;
-                    }
-                }
-                $html .= '<br>';
-                $html .= '<a href="?op=detail&id=' . $id . '"><i style="cursor:pointer" class="fas fa-info-circle github-logo details-close-button" id="' . $id .'">Lees meer...</i></a>';
-                //                $html .= '<a href="index.php?op=read&id=' . $id . '"><button type="button" class="btn btn-primary">Lees meer</button></a';
-
-                $html .= "</div>";
-                $tableheader = false;
+                $html .= "</tr>";
+                $tableheader = true;
             }
 
-            $html .= "";
+            $html .= "<tr>";
 
-            /*foreach ($row as $key => $value) {
+            foreach ($row as $key => $value) {
                 if($key == "product_price"){
                     $html .= "<td> €" . str_replace('.', ',', $value) . "</td>";
                 } else {
-                    $html .= $value;
-
+                    $html .= "<td>$value</td>";
                 }
 
-            }*/
-            $html .= "</div>";
+            }
+
 
 
         }
-        $html .= "</div>";
 
-        $html .= "</div>";
-
-        $html .= "</div>";
-        $html .= "<script src='./assets/js/pop-up.js'></script>";
-
+        $html .= "</table>";
         /*$html .= "<ul><li><a href=''>1</a></li><li><a href=''>2</a></li><li><a href=''>3</a></li></ul>";
         for ($i=1; $i <= $pages; $i++){
             $html.= "<li><div onClick=\'localhost/index.php?op=readpage&p='.$i\">".$i."</div></li>";
@@ -78,4 +51,6 @@ class utility
     }
 
 
+
 }
+?>

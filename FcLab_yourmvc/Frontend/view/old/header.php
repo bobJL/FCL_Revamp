@@ -20,22 +20,22 @@
         position: relative;
     }
 </style>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+<nav class="navbar navbar-expand-lg navbar bg fixed-top ">
     <div class="container">
         <div class="same">
             <h3 class="" style="color:#007bff;"> FCL evenement planner</h3>
-            <ul class="nav nav-tabs nav-tabs-dark">
-                <li class="nav-item-dark">
-                    <a class="nav-link active alert-link" href="../">evenement pagina</a>
+            <ul class="nav nav-tabs nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link alert-link" href="../frontend">evenement pagina</a>
                 </li>
-                <li class="nav-item-dark">
+                <li class="nav-item">
                     <a class="nav-link alert-link" href="view/login.php">login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link alert-link" href="../../Backend">beheer pagina</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link alert-link" href="register">registreer als vrijwilliger</a>
+                    <a class="nav-link alert-link" href="view/register.php">registreer als vrijwilliger</a>
                 </li>
             </ul>
             <span class="line"></span>
