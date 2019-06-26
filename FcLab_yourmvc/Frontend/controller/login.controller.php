@@ -30,7 +30,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
       $email = '';
 
    }
-   else
+
    {
       if ( empty($general_err) )
       {
