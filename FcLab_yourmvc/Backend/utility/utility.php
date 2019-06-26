@@ -16,17 +16,35 @@ class utility
 
 
                 $html .= "<tr>";
-                foreach ($row as $key => $value) {
+                /*foreach ($row as $key => $value) {
 
 
                     $html .= "<th>$key</th>";
-                }
+                }*/
+
+                $html .= "<th>Hallo</th>";
+                $html .= "<th>Activiteit Naam</th>";
+                $html .= "<th>Activiteit Benodigdheden</th>";
+                $html .= "<th>Activiteit Beschrijving</th>";
+                $html .= "<th>Vrijwilligers</th>";
+                $html .= "<th></th>";
+                $html .= "<th>Datum</th>";
+                $html .= "<th>Tijd</th>";
+                $html .= "<th colspan='3'>Acties</th>";
+
 
                 $html .= "</tr>";
                 $tableheader = true;
             }
 
             $html .= "<tr>";
+
+            foreach ($row as $key => $value) {
+                if($key == "id"){
+                    $id = $row['id'];
+                }
+
+            }
 
             foreach ($row as $key => $value) {
                 if($key == "product_price"){
@@ -39,8 +57,8 @@ class utility
 
 
             $html .= "<td><button type='button' class=\"btn btn-success\" name='read'><i class=\"fas fa-book-open\"> Read</i></button></td>";
-            $html .= "<td><button type='button' class=\"btn btn-warning\"  name='update'><i class=\"fas fa-pencil-alt\"> Update</i></button></td>";
-            $html .= "<td><button type='button' class='btn btn-danger' name='delete'><i class=\"fas fa-times\"> Delete</i></button></td>";
+            $html .= "<td><button onclick=window.location.href='index.php?op=update&id=$id' type='button' class=\"btn btn-warning\"  name='update'><i class=\"fas fa-pencil-alt\"> Update</i></button></td>";
+            $html .= "<td><button onclick=window.location.href='index.php?op=delete&id=$id' type='button' class='btn btn-danger' name='delete'><i class=\"fas fa-times\"> Delete</i></button></td>";
             $html .= "</tr>";
         }
 

@@ -35,7 +35,7 @@
                     <a class="nav-link alert-link" href="../../Backend">beheer pagina</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link alert-link" href="register">registreer als vrijwilliger</a>
+                    <a class="nav-link alert-link" href="register.php">registreer als vrijwilliger</a>
                 </li>
             </ul>
             <span class="line"></span>

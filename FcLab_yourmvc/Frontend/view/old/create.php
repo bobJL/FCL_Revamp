@@ -4,6 +4,7 @@
     <legend>Maak een nieuw evenement aan</legend>
     <input type="hidden" name="product_id">
     <label>Activiteit naam: </label><input type="text" name="activiteit_naam">
+    <label>Activiteit datum: </label><input type="text" name="activiteit_datum">
     <label>Activiteit benodigdheden: </label><input type="text" name="activiteit_benodigdheden">
     <label>Activiteit beschrijving </label><input type="text" name="activiteit_beschrijving">
     <label>Vrijwilligers: </label><input type="text" name="acitviteit_vrijwilligers">

@@ -75,7 +75,7 @@ class ProductsController
     public function collectReadContact($id)
     {
 
-        $products = $this->ProductsLogic->readContact($id);
+        $result = $this->ProductsLogic->readContact($id);
         include 'view/ViewProducts.php';
 
 

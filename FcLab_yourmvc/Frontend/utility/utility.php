@@ -67,6 +67,7 @@ class utility
         }
 
         $html .= "</div>";
+        $html .= "</div>";
 
         $html .= "</div>";
 

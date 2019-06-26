@@ -37,7 +37,7 @@ class ProductsLogic
 
     public function readContacts(){
         try {
-            $sql = "SELECT id, activiteit_naam, activiteit_benodigdheden, activiteit_beschrijving, 	acitviteit_vrijwilligers FROM activiteiten;";
+            $sql = "SELECT id, activiteit_naam, activiteit_benodigdheden, activiteit_beschrijving, activiteit_vrijwilligers FROM activiteiten;";
             $result = $this->DataHandler->readsData($sql);
 
             return $result;
