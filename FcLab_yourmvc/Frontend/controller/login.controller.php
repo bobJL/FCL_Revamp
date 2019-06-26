@@ -1,6 +1,6 @@
 <?php
 
-include '../model/login.model.php';
+include '../model/Login.model.php';
 // Set the input fields and error for every fields to empty value to avoid undefined notice.
 $email = $pwd = '';
 $general_err = '';
