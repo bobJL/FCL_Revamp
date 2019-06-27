@@ -49,10 +49,34 @@ class ProductsLogic
 
     public function readContact($id)
     {
-
         try {
-
             $sql = "SELECT * FROM activiteiten WHERE id =" . $id;
+
+            $result = $this->DataHandler->readsData($sql);
+
+            return $result;
+        }catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function checklist($id)
+    {
+        try {
+            $sql = "SELECT * FROM checklist WHERE id =" . $id;
+
+            $result = $this->DataHandler->readsData($sql);
+
+            return $result;
+        }catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function evenementen($id)
+    {
+        try {
+            $sql = "SELECT * FROM evenementen WHERE id =" . $id;
 
             $result = $this->DataHandler->readsData($sql);
 
