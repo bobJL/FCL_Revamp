@@ -47,11 +47,11 @@ class ProductsController
                     $output = $this->collectSearchContacts($_REQUEST["input"]);
                     break;
                 case 'readpage':
-                    $this->collectReadPage($pages, $data);
+                  $this->collectReadPage($pages, $data);
                     break;
                 default:
                     $this->collectReadContacts();
-                    $this->collectReadPage($pages, $data);
+                  //  $this->collectReadPage($pages, $data);
 
                     break;
             }
