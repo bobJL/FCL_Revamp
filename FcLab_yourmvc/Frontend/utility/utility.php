@@ -11,9 +11,7 @@ class utility
         $html .= "<div class='row'>";
         $html .= "<div class='col-md-8'>";
         $html .= "<h1 class='my-4'>Toekomstige evenementen
-      <small>alle nodige informatie</small>
     </h1>";
-        $html .= "<div class='card mb-4'>";
 
 
 
@@ -21,6 +19,7 @@ class utility
 
             if ($tableheader == false) {
 
+                $html .= "<div class='card mb-4'>";
 
                 $html .= "<div class='col'>";
                 foreach ($row as $key => $value) {
@@ -32,6 +31,15 @@ class utility
                 foreach ($row as $key => $value) {
 
                     if($key == 'activiteit_naam') {
+                        $html .= "<h4>" . $value . "</h4>";
+                    }
+                }
+
+                $html .= 'Tijd: ';
+
+                foreach ($row as $key => $value) {
+
+                    if($key == 'tijd') {
                         $html .= $value;
                     }
                 }
@@ -43,7 +51,7 @@ class utility
                     }
                 }
                 $html .= '<br>';
-                $html .= '<a href="index.php?op=read&id=' . $id . '"><button type="button" class="btn btn-primary">Lees meer</button></a> 
+                $html .= '<a href="index.php?op=read&id=' . $id . '"><button type="button" class="btn btn-primary leesmeer">Lees meer</button></a> 
 ';
 
                 $html .= "</div>";

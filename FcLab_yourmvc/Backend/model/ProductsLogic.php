@@ -39,7 +39,8 @@ class ProductsLogic
 
     public function readContacts(){
         try {
-            $sql = "SELECT * FROM activiteiten;";
+            $sql = "SELECT id, activiteit_naam AS 'Activiteit naam', activiteit_benodigdheden AS 'Activiteit benodigdgeden'
+                    , activiteit_beschrijving AS 'Activiteit beschrijving', activiteit_vrijwilligers AS 'Vrijwilligers', datum AS 'Datum', tijd AS 'Tijd' FROM activiteiten;";
             $result = $this->DataHandler->readsData($sql);
 
             return $result;
@@ -64,7 +65,7 @@ class ProductsLogic
         }
     }
 
-    public function updateContact($id, $activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $activiteit_vrijwilligers	, $event, $activiteit_datum, $activiteit_tijd)
+    public function updateContact($id, $activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $activiteit_vrijwilligers, $activiteit_datum, $activiteit_tijd)
     {
         $id = $_POST['id'];
         $activiteit_naam = $_POST['activiteit_naam'];
@@ -73,7 +74,6 @@ class ProductsLogic
         $activiteit_benodigdheden = $_POST['activiteit_benodigdheden'];
         $activiteit_beschrijving = $_POST['activiteit_beschrijving'];
         $activiteit_vrijwilligers = $_POST['activiteit_vrijwilligers'];
-        $event = $_POST['event'];
 
         $sql = "UPDATE `activiteiten` 
 SET `activiteit_naam` = '$activiteit_naam', `activiteit_benodigdheden` = '$activiteit_benodigdheden', 

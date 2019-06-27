@@ -2,7 +2,9 @@
 <?php include 'header.php'; ?>
 
 <?php
-$id = $_POST['id'];
+
+$id = $_GET['id'];
+
 
 $servername = "localhost";
 $username = "root";
@@ -16,13 +18,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM activiteiten WHERE `id` = $id";
+$sql = "SELECT activiteit_naam, Time_FORMAT(`tijd`, '%H:%i') AS `tijd`, datum, activiteit_benodigdheden, activiteit_beschrijving, activiteit_vrijwilligers FROM activiteiten WHERE `id` = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
+
         $activiteit_naam = $row['activiteit_naam'];
+        $activiteit_tijd = $row['tijd'];
+        $activiteit_datum = $row['datum'];
+        $activiteit_benodigdheden = $row['activiteit_benodigdheden'];
+        $activiteit_beschrijving = $row['activiteit_beschrijving'];
+        $activiteit_vrijwilligers = $row['activiteit_vrijwilligers'];
     }
 } else {
     echo "0 results";
@@ -33,14 +41,14 @@ $conn->close();
 ?>
 
 <form action="?op=update" method="POST">
-    <legend>Maak een nieuw evenement aan</legend>
-    <input type="hidden" name="product_id">
+    <legend>Pas een evenement aan</legend>
+    <input type="hidden" name="id" value="<?php echo $id; ?>">
     <label>Activiteit naam: </label><input type="text" name="activiteit_naam" value="<?php echo $activiteit_naam; ?>">
-    <label>Activiteit tijd: </label><input type="text" name="activiteit_tijd" value="<?php echo $activiteit_tijd; ?>">
+    <label>Activiteit tijd: </label><input type="time" name="activiteit_tijd" value="<?php echo $activiteit_tijd; ?>">
     <label>Activiteit datum: </label><input type="date" name="activiteit_datum" value="<?php echo $activiteit_datum; ?>">
     <label>Activiteit benodigdheden: </label><input type="text" name="activiteit_benodigdheden" value="<?php echo $activiteit_benodigdheden; ?>">
     <label>Activiteit beschrijving </label><input type="text" name="activiteit_beschrijving" value="<?php echo $activiteit_beschrijving; ?>">
-    <label>Vrijwilligers: </label><input type="text" name="acitviteit_vrijwilligers" value='<?php echo $activiteit_vrijwilligers; ?>'>
+    <label>Vrijwilligers: </label><input type="text" name="activiteit_vrijwilligers" value='<?php echo $activiteit_vrijwilligers; ?>'>
     <button type="submit" name="submit">Sturen</button>
 </form>
 

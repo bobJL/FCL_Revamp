@@ -16,21 +16,15 @@ class utility
 
 
                 $html .= "<tr>";
-                /*foreach ($row as $key => $value) {
+                foreach ($row as $key => $value) {
 
 
                     $html .= "<th>$key</th>";
-                }*/
+                }
 
-                $html .= "<th>Hallo</th>";
-                $html .= "<th>Activiteit Naam</th>";
-                $html .= "<th>Activiteit Benodigdheden</th>";
-                $html .= "<th>Activiteit Beschrijving</th>";
-                $html .= "<th>Vrijwilligers</th>";
-                $html .= "<th></th>";
-                $html .= "<th>Datum</th>";
-                $html .= "<th>Tijd</th>";
                 $html .= "<th colspan='3'>Acties</th>";
+
+
 
 
                 $html .= "</tr>";

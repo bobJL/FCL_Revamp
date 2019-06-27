@@ -37,7 +37,7 @@ class ProductsController
                     if ($_POST['activiteit_naam'] == null) {
                         include 'view/old/update.php';
                     } else {
-                        $this->collectUpdateContact($_POST['activiteit_naam'], $_POST['activiteit_datum'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['acitviteit_vrijwilligers']);
+                        $this->collectUpdateContact($_POST['activiteit_naam'], $_POST['activiteit_datum'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['activiteit_vrijwilligers'], $_POST['activiteit_tijd']);
                     }
                     break;
                 case 'delete':
@@ -46,12 +46,9 @@ class ProductsController
                 case 'search':
                     $output = $this->collectSearchContacts($_REQUEST["input"]);
                     break;
-                case 'readpage':
-                    $this->collectReadPage($pages, $data);
-                    break;
+
                 default:
                     $this->collectReadContacts();
-                    $this->collectReadPage($pages, $data);
 
                     break;
             }
@@ -69,7 +66,7 @@ class ProductsController
 
     public function collectUpdateContact()
     {
-        $products = $this->ProductsLogic->createContact( $_POST['activiteit_naam'], $_POST['activiteit_datum'], $_POST['activiteit_tijd'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['activiteit_vrijwilligers'], $_POST['event']);
+        $products = $this->ProductsLogic->updateContact( $_POST['id'], $_POST['activiteit_naam'], $_POST['activiteit_datum'], $_POST['activiteit_tijd'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['activiteit_vrijwilligers']);
         include 'view/old/update.php';
     }
 

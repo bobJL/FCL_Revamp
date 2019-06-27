@@ -46,12 +46,9 @@ class ProductsController
                 case 'search':
                     $output = $this->collectSearchContacts($_REQUEST["input"]);
                     break;
-                case 'readpage':
-                    $this->collectReadPage($pages, $data);
-                    break;
+
                 default:
                     $this->collectReadContacts();
-                    $this->collectReadPage($pages, $data);
 
                     break;
             }
@@ -63,7 +60,7 @@ class ProductsController
 
     public function collectCreateContact($request)
     {
-        $products = $this->ProductsLogic->createContact($_POST['id'], $_POST['activiteit_naam'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['acitviteit_vrijwilligers'], $_POST['event']);
+        $products = $this->ProductsLogic->createContact($_POST['id'], $_POST['activiteit_naam'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['activiteit_vrijwilligers'], $_POST['event']);
         include 'view/old/create.php';
     }
 
@@ -105,13 +102,5 @@ class ProductsController
 
     }
 
-    /*public function collectReadPage($pages, $data){
-        //get current starting point of records
-        $item_per_page = 4;
-        $position = (($_REQUEST['p']-1) * $item_per_page);
-        $sql = "SELECT * FROM products LIMIT $position, $item_per_page";
-        $result = $data->readData($sql);
-        $pages = $data->countPages('SELECT COUNT(*) FROM products');
-        include (view/ViewProducts.php);
-    }*/
+
 }

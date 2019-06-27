@@ -13,19 +13,19 @@ class ProductsLogic
     {
     }
 
-    public function createContact($id, $activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $acitviteit_vrijwilligers	, $event)
+    public function createContact($id, $activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $activiteit_vrijwilligers	, $event)
     {
         try {
             $id = $_POST['id'];
             $activiteit_naam = $_POST['activiteit_naam'];
             $activiteit_benodigdheden = $_POST['activiteit_benodigdheden'];
             $activiteit_beschrijving = $_POST['activiteit_beschrijving'];
-            $acitviteit_vrijwilligers = $_POST['acitviteit_vrijwilligers'];
+            $acitviteit_vrijwilligers = $_POST['activiteit_vrijwilligers'];
             $event = $_POST['event'];
 
 
-            $sql = "INSERT INTO activiteiten(`id`,`activiteit_naam`,`activiteit_benodigdheden`,`activiteit_beschrijving`, `acitviteit_vrijwilligers` ,`event`)
-            VALUES('$id', '$activiteit_naam', '$activiteit_benodigdheden',  '$activiteit_beschrijving', '$acitviteit_vrijwilligers', '$event');";
+            $sql = "INSERT INTO activiteiten(`id`,`activiteit_naam`,`activiteit_benodigdheden`,`activiteit_beschrijving`, `activiteit_vrijwilligers` ,`event`)
+            VALUES('$id', '$activiteit_naam', '$activiteit_benodigdheden',  '$activiteit_beschrijving', '$activiteit_vrijwilligers', '$event');";
             echo "test1";
             $result = $this->DataHandler->createData($sql);
             echo "test2";
@@ -37,7 +37,7 @@ class ProductsLogic
 
     public function readContacts(){
         try {
-            $sql = "SELECT id, activiteit_naam, activiteit_benodigdheden, activiteit_beschrijving, activiteit_vrijwilligers FROM activiteiten;";
+            $sql = "SELECT id, activiteit_naam, activiteit_benodigdheden, activiteit_beschrijving, activiteit_vrijwilligers, tijd, datum FROM activiteiten;";
             $result = $this->DataHandler->readsData($sql);
 
             return $result;
@@ -62,8 +62,19 @@ class ProductsLogic
         }
     }
 
-    public function updateContact($product_id, $product_type_code, $suplier_id, $product_name, $product_price, $other_product_details)
+    public function updateContact($activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $activiteit_vrijwilligers)
     {
+        try{
+
+
+            $sql = "SELECT * FROM activiteiten WHERE id =" . $id;
+
+            $result = $this->DataHandler->updateData($sql);
+
+            return $result;
+        }catch (Exception $e) {
+            throw $e;
+        }
     }
 
     public function deleteContact($id)
