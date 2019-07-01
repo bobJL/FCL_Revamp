@@ -6,7 +6,7 @@ class ProductsLogic
 {
     public function __construct()
     {
-        $this->DataHandler = new DataHandler("localhost", "mysql", "eventplanner", "ilias", "12345");
+        $this->DataHandler = new DataHandler("localhost", "mysql", "fcl_database", "root", "");
     }
 
     public function __destruct()
@@ -78,7 +78,7 @@ class ProductsLogic
         $sql = "UPDATE `activiteiten` 
 SET `activiteit_naam` = '$activiteit_naam', `activiteit_benodigdheden` = '$activiteit_benodigdheden', 
 `activiteit_beschrijving` = '$activiteit_beschrijving', `activiteit_vrijwilligers` = '$activiteit_vrijwilligers', 
-`datum` = '$activiteit_datum', `tijd` = '$activiteit_tijd' WHERE `activiteiten`.`id` = $id";
+`datum` = '$activiteit_datum', `tijd` = '$activiteit_tijd' WHERE `id` = $id";
     }
 
 
