@@ -43,7 +43,7 @@ $conn->close();
     <div class="col"></div>
     <div class="col">
         <div class="form-group">
-<form action="?op=update" method="POST">
+<form action="?op=update&id=<?php echo $id ?>" method="POST">
     <legend>Pas een evenement aan</legend>
     <input type="hidden" name="id" value="<?php echo $id; ?>">
     <label>Activiteit naam: </label><input type="text" name="activiteit_naam" value="<?php echo $activiteit_naam; ?>" class="form-control">
@@ -52,6 +52,7 @@ $conn->close();
     <label>Activiteit benodigdheden: </label><input type="text" name="activiteit_benodigdheden" value="<?php echo $activiteit_benodigdheden; ?>" class="form-control">
     <label>Activiteit beschrijving </label><input type="text" name="activiteit_beschrijving" value="<?php echo $activiteit_beschrijving; ?>" class="form-control">
     <label>Vrijwilligers: </label><input type="text" name="activiteit_vrijwilligers" value='<?php echo $activiteit_vrijwilligers; ?>' class="form-control">
+    <br>
     <button type="submit" name="submit" class="btn btn-primary" >Inzenden</button>
 </form>
         </div>

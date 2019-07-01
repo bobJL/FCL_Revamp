@@ -22,7 +22,7 @@ class utility
                     $html .= "<th>$key</th>";
                 }
 
-                $html .= "<th colspan='3'>Acties</th>";
+                $html .= "<th colspan='2'>Acties</th>";
 
 
 
@@ -50,7 +50,6 @@ class utility
             }
 
 
-            $html .= "<td><button type='button' class=\"btn btn-success\" name='read'><i class=\"fas fa-book-open\"> Read</i></button></td>";
             $html .= "<td><button onclick=window.location.href='index.php?op=update&id=$id' type='button' class=\"btn btn-warning\"  name='update'><i class=\"fas fa-pencil-alt\"> Update</i></button></td>";
             $html .= "<td><button onclick=window.location.href='index.php?op=delete&id=$id' type='button' class='btn btn-danger' name='delete'><i class=\"fas fa-times\"> Delete</i></button></td>";
             $html .= "</tr>";

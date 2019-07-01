@@ -64,9 +64,9 @@ class ProductsController
         include 'view/old/create.php';
     }
 
-    public function collectUpdateContact()
+    public function collectUpdateContact($request)
     {
-        $products = $this->ProductsLogic->updateContact( $_POST['id'], $_POST['activiteit_naam'], $_POST['activiteit_datum'], $_POST['activiteit_tijd'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['activiteit_vrijwilligers']);
+        $products = $this->ProductsLogic->updateContact( $_POST['activiteit_naam'], $_POST['activiteit_benodigdheden'], $_POST['activiteit_beschrijving'], $_POST['activiteit_vrijwilligers'], $_POST['activiteit_datum'], $_POST['activiteit_tijd']);
         include 'view/old/update.php';
     }
 
@@ -88,9 +88,11 @@ class ProductsController
 
     public function collectDeleteContact($id)
     {
-        //echo "Gebruiker is verwijderd";
+        echo "Evenement is verwijderd";
         $products = $this->ProductsLogic->deleteContact($id);
-        include 'view/old/delete.php';
+        //include 'view/old/delete.php';
+        include 'view/ViewProducts.php';
+
 
     }
 

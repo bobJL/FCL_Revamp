@@ -65,20 +65,30 @@ class ProductsLogic
         }
     }
 
-    public function updateContact($id, $activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $activiteit_vrijwilligers, $activiteit_datum, $activiteit_tijd)
+    public function updateContact($activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $activiteit_vrijwilligers, $activiteit_datum, $activiteit_tijd)
     {
-        $id = $_GET['id'];
-        $activiteit_naam = $_POST['activiteit_naam'];
-        $activiteit_datum = $_POST['activiteit_datum'];
-        $activiteit_tijd = $_POST['activiteit_tijd'];
-        $activiteit_benodigdheden = $_POST['activiteit_benodigdheden'];
-        $activiteit_beschrijving = $_POST['activiteit_beschrijving'];
-        $activiteit_vrijwilligers = $_POST['activiteit_vrijwilligers'];
+        try {
 
-        $sql = "UPDATE `activiteiten` 
+
+            $id = $_GET['id'];
+            $activiteit_naam = $_POST['activiteit_naam'];
+            $activiteit_datum = $_POST['activiteit_datum'];
+            $activiteit_tijd = $_POST['activiteit_tijd'];
+            $activiteit_benodigdheden = $_POST['activiteit_benodigdheden'];
+            $activiteit_beschrijving = $_POST['activiteit_beschrijving'];
+            $activiteit_vrijwilligers = $_POST['activiteit_vrijwilligers'];
+
+            $sql = "UPDATE `activiteiten` 
 SET `activiteit_naam` = '$activiteit_naam', `activiteit_benodigdheden` = '$activiteit_benodigdheden', 
 `activiteit_beschrijving` = '$activiteit_beschrijving', `activiteit_vrijwilligers` = '$activiteit_vrijwilligers', 
 `datum` = '$activiteit_datum', `tijd` = '$activiteit_tijd' WHERE `id` = $id";
+
+            $result = $this->DataHandler->updateData($sql);
+            echo "test2";
+            return $result;
+        }catch (Exception $e) {
+            throw $e;
+        }
     }
 
 
