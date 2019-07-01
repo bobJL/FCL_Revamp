@@ -67,7 +67,7 @@ class ProductsLogic
 
     public function updateContact($id, $activiteit_naam, $activiteit_benodigdheden, $activiteit_beschrijving, $activiteit_vrijwilligers, $activiteit_datum, $activiteit_tijd)
     {
-        $id = $_POST['id'];
+        $id = $_GET['id'];
         $activiteit_naam = $_POST['activiteit_naam'];
         $activiteit_datum = $_POST['activiteit_datum'];
         $activiteit_tijd = $_POST['activiteit_tijd'];
