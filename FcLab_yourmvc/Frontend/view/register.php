@@ -1,4 +1,4 @@
-<?php
+ßßß<?php
 #
    include_once 'old/header.php';
    require_once '../controller/register.controller.php';
