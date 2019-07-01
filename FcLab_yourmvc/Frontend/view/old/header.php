@@ -25,8 +25,8 @@
         <div class="same">
             <h3 class="" style="color:#007bff;"> FCL evenement planner</h3>
             <ul class="nav nav-tabs nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link alert-link" href="../frontend">evenement pagina</a>
+                <li class="nav-item-dark">
+                    <a class="nav-link alert-link" href="../">evenement pagina</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link alert-link" href="view/login.php">login</a>
@@ -35,7 +35,7 @@
                     <a class="nav-link alert-link" href="../../Backend">beheer pagina</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link alert-link" href="view/register.php">registreer als vrijwilliger</a>
+                    <a class="nav-link alert-link" href="register.php">registreer als vrijwilliger</a>
                 </li>
             </ul>
             <span class="line"></span>
